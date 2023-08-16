@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Lukyanenko</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+    <img id="photo" src="images/Anna.jpg" alt="Anna">
     <h1>Anna Lukyanenko</h1>
 
     <section>
@@ -28,7 +30,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="experience">
         <h2>Experience</h2>
 
         <p>As a graphic designer and UI/UX specialist, I successfully redesigned an e-commerce website, crafted a
@@ -55,15 +57,15 @@
         <a href="http://github.com/AnnaLuky">link to github</a>
     </section>
 
-    <section>
+    <section id="message-form">
         <h2>Leave a Message</h2>
         <form name="leave_message">
-            <label for="usersName">User Name</label><br><input type="text" name="usersName" id="usersName"
+            <label for="usersName">User Name</label><input type="text" name="usersName" id="usersName"
                 required="true"><br>
-            <label for="usersEmail">User Email</label><br><input type="text" name="usersEmail" id="usersEmail"
+            <label for="usersEmail">User Email</label><input type="text" name="usersEmail" id="usersEmail"
                 required="true"><br>
-            <label for="usersMessage">User Message</label><br><textarea name="usersMessage" id="usersMessage"
-                required="true"></textarea><br>
+            <label for="usersMessage">User Message</label><textarea name="usersMessage" id="usersMessage"
+                required="true"></textarea>
             <button type="submit">Submit</button>
         </form>
 
