@@ -1,16 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 
+:root {
+    --text-color: #3D3126;
+    --accent-color: #8d9aa7;
+    --dark-accent-color: #3778A7;
+    --light-color: #FFFFFF;
+    --main-width: 720px;
+
+}
+
+@media screen and (max-width: 900px) {
+    :root {
+        --main-width: 100%
+    }
+}
+
 body {
-    background-color: #FFFFFF;
-    color: #5A5A5A;
+    background-color: var(--light-color);
+    color: var(--text-color);
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
 }
 
+#container {
+    width: var(--main-width);
+    margin: 0 auto;
+}
+
+
+
+header {
+    display: flex;
+    margin: 20px 0;
+    align-items: flex-end;
+}
+
+#photo {
+    width: 70px;
+    box-shadow: 7px 4px 13px -3px rgba(0, 0, 0, 0.6);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    /* position: sticky; */
+}
+
+nav,
+footer {
+    width: calc(var(--main-width) + 100px);
+    margin-left: -50px;
+    background-color: var(--dark-accent-color);
+    color: var(--light-color);
+}
+
+/* @media screen and (max-width: 900px) {
+
+    nav {
+        position:absolute;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        right: 0;
+        top: 20px;
+        background-image: url("");
+    }
+
+    footer {
+        width: 100%;
+        margin-left: 0;
+    }
+} */
+
+nav ul {
+    padding: 0;
+    margin: 10px 50px 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+/* @media screen and (max-width: 900px) {
+    nav ul {
+        display: none;
+    }
+
+} */
+
+nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
 li::marker {
-    color: #BF7449;
+    color: var(--accent-color);
 }
 
 p {
@@ -18,52 +107,85 @@ p {
 }
 
 a {
-    color: #BF7449;
+    color: var(--accent-color);
 }
 
 section {
-    margin: 0px 50px 50px 50px;
-    width: 720px;
+    margin-bottom: 50px;
+    width: var(--main-width);
 }
 
 h1 {
     font-weight: 300;
     margin: 0 50px 0 50px;
+    color: var(--dark-accent-color);
 }
 
 h2 {
+    color: var(--dark-accent-color);
     font-weight: 300;
 }
 
-#photo {
-    margin: 20px 0 20px 50px;
-    box-shadow: 7px 4px 13px -3px rgba(0, 0, 0, 0.6);
-}
-
 #skills ul,
-#experience ul,
 #messages {
     list-style-type: square;
 }
 
+#experience ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#experience ul li {
+
+    background-color: var(--dark-accent-color);
+    color: var(--light-color);
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 40px;
+}
+
 #message-form label {
     font-size: 0.9em;
-    font-weight: 400;
-    color: #BF7449;
+    font-weight: 300;
+    color: var(--light-color);
     margin-bottom: 5px;
     display: block;
 }
 
 #message-form form {
-    background-color: #f5f5f5;
-    width: 310px;
+    background-color: var(--dark-accent-color);
+    width: var(--main-width);
     padding: 10px 30px 30px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.half,
+.full {
+    width: calc(50% - 10px);
+    padding: 0 10px 10px 0;
+}
+
+.half {
+
+    box-sizing: border-box;
+}
+
+.full {
+    width: 100%;
 }
 
 #message-form input,
 #message-form textarea {
-    width: 300px;
-    border: #BF7449 1px solid;
+    width: 100%;
+    border: none;
     margin-bottom: 10px;
     padding: 3px;
 }
@@ -76,17 +198,18 @@ h2 {
     display: block;
     padding: 3px;
     width: 100px;
-    background-color: #BF7449;
+    background-color: var(--light-color);
+    font-weight: 300;
     border: none;
-    color: #FFFFFF;
+    color: var(--dark-accent-color);
 }
 
 #messages button {
     padding: 3px;
     width: 70px;
-    background-color: #BF7449;
+    background-color: var(--accent-color);
     border: none;
-    color: #FFFFFF;
+    color: var(--light-color);
 }
 
 #messages li {
@@ -94,6 +217,6 @@ h2 {
 }
 
 footer {
-    background-color: #f5f5f5;
-    padding: 20px 50px;
+    box-sizing: border-box;
+    padding: 5px 50px;
 }
