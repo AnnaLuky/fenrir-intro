@@ -35,6 +35,7 @@ body {
         margin: 0;
         min-width: 360px;
         padding: 0 20px;
+        position: relative;
     }
 }
 
@@ -104,7 +105,7 @@ footer {
         width: 40px;
         height: 40px;
         right: 10px;
-        top: 25px;
+        top: 5px;
         background-image: url("../images/Hamburger_icon.svg");
         margin: 0;
         background-repeat: no-repeat;
@@ -176,7 +177,8 @@ section {
     color: var(--light-color);
     margin: 10px;
     padding: 10px;
-    width: 300px;
+    min-width: 300px;
+    width: calc(50% - 40px);
     height: 40px;
 }
 
