@@ -9,9 +9,9 @@
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
     :root {
-        --main-width: 100%
+        --main-width: 100%;
     }
 }
 
@@ -27,9 +27,16 @@ body {
 #container {
     width: var(--main-width);
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-
+@media screen and (max-width: 1024px) {
+    #container {
+        margin: 0;
+        min-width: 360px;
+        padding: 0 20px;
+    }
+}
 
 header {
     display: flex;
@@ -37,9 +44,40 @@ header {
     align-items: flex-end;
 }
 
+h1 {
+    font-weight: 300;
+    margin: 0 50px 0 50px;
+    color: var(--dark-accent-color);
+}
+
+h2 {
+    color: var(--dark-accent-color);
+    font-weight: 300;
+}
+
 #photo {
     width: 70px;
     box-shadow: 7px 4px 13px -3px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #photo {
+        width: 50px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-left: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
 }
 
 nav {
@@ -58,23 +96,26 @@ footer {
     color: var(--light-color);
 }
 
-/* @media screen and (max-width: 900px) {
 
+
+@media screen and (max-width: 1024px) {
     nav {
-        position:absolute;
+        position: absolute;
         width: 40px;
         height: 40px;
-        background-color: black;
-        right: 0;
-        top: 20px;
-        background-image: url("");
+        right: 10px;
+        top: 25px;
+        background-image: url("../images/Hamburger_icon.svg");
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: var(--light-color);
     }
 
     footer {
-        width: 100%;
-        margin-left: 0;
+        margin: 0 -20px;
     }
-} */
+}
 
 nav ul {
     padding: 0;
@@ -85,12 +126,12 @@ nav ul {
     list-style-type: none;
 }
 
-/* @media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
     nav ul {
         display: none;
     }
 
-} */
+}
 
 nav a {
     color: var(--light-color);
@@ -115,16 +156,6 @@ section {
     width: var(--main-width);
 }
 
-h1 {
-    font-weight: 300;
-    margin: 0 50px 0 50px;
-    color: var(--dark-accent-color);
-}
-
-h2 {
-    color: var(--dark-accent-color);
-    font-weight: 300;
-}
 
 #skills ul,
 #messages {
@@ -181,6 +212,18 @@ h2 {
 .full {
     width: 100%;
 }
+
+@media screen and (max-width: 1024px) {
+    #message-form form {
+        margin: 0 -20px;
+        width: auto;
+    }
+
+    .half {
+        width: 100%;
+    }
+}
+
 
 #message-form input,
 #message-form textarea {
