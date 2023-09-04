@@ -54,6 +54,8 @@ fetch("https://api.github.com/users/AnnaLuky/repos")
             project.appendChild(addInfo);
             projectList.appendChild(project);
         }
-    })
+    }).catch((error) => {
+        console.error(error);
+    });
 
 
