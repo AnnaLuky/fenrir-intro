@@ -43,8 +43,15 @@ githubRequest.addEventListener("load", function (event) {
     const projectSection = document.querySelector("#projects");
     const projectList = projectSection.querySelector("ul");
     for (let i = 0; i < repositories.length; i++) {
+        const data = repositories[i];
         const project = document.createElement("li");
-        project.innerText = repositories[i].name;
+        const linkToProject = document.createElement("a");
+        linkToProject.innerText = data.name;
+        linkToProject.setAttribute("href", data.html_url);
+        const addInfo = document.createElement("span");
+        addInfo.innerText = `${new Date(data.created_at).toDateString()}${data.description === null ? "" : `, ${data.description}`}`;
+        project.appendChild(linkToProject);
+        project.appendChild(addInfo);
         projectList.appendChild(project);
     }
 });
