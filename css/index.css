@@ -2,7 +2,7 @@
 
 :root {
     --text-color: #3D3126;
-    --accent-color: #8d9aa7;
+    --accent-color: #5A154B;
     --dark-accent-color: #3778A7;
     --light-color: #FFFFFF;
     --main-width: 720px;
@@ -23,6 +23,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 
 #container {
     width: var(--main-width);
@@ -158,11 +159,18 @@ section {
 }
 
 
-#skills ul,
+#skills ul, #projects ul,
 #messages {
     list-style-type: square;
 }
-
+#projects a{
+display: inline-block;
+min-width:  250px;
+}
+#projects span{
+    font-style: italic;
+    font-size: smaller;
+}
 #experience ul {
     list-style-type: none;
     display: flex;
@@ -246,7 +254,7 @@ section {
     background-color: var(--light-color);
     font-weight: 300;
     border: none;
-    color: var(--dark-accent-color);
+    color: var(--accent-color);
 }
 
 #messages button {
