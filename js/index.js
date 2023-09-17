@@ -34,27 +34,28 @@ messageForm.addEventListener("submit", function (event) {
     event.target.reset();
 })
 
-const githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/AnnaLuky/repos");
-githubRequest.send();
-githubRequest.addEventListener("load", function (event) {
-    const repositories = JSON.parse(this.response)
-    console.log(repositories);
-    const projectSection = document.querySelector("#projects");
-    const projectList = projectSection.querySelector("ul");
-    for (let i = 0; i < repositories.length; i++) {
-        const data = repositories[i];
-        const project = document.createElement("li");
-        const linkToProject = document.createElement("a");
-        linkToProject.innerText = data.name;
-        linkToProject.setAttribute("href", data.html_url);
-        const addInfo = document.createElement("span");
-        addInfo.innerText = `${new Date(data.created_at).toDateString()}${data.description === null ? "" : `, ${data.description}`}`;
-        project.appendChild(linkToProject);
-        project.appendChild(addInfo);
-        projectList.appendChild(project);
-    }
-});
-
+fetch("https://api.github.com/users/AnnaLuky/repos")
+    .then((response) => {
+        return response.json();
+    })
+    .then((repositories) => {
+        console.log(repositories);
+        const projectSection = document.querySelector("#projects");
+        const projectList = projectSection.querySelector("ul");
+        for (let i = 0; i < repositories.length; i++) {
+            const data = repositories[i];
+            const project = document.createElement("li");
+            const linkToProject = document.createElement("a");
+            linkToProject.innerText = data.name;
+            linkToProject.setAttribute("href", data.html_url);
+            const addInfo = document.createElement("span");
+            addInfo.innerText = `${new Date(data.created_at).toDateString()}${data.description === null ? "" : `, ${data.description}`}`;
+            project.appendChild(linkToProject);
+            project.appendChild(addInfo);
+            projectList.appendChild(project);
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
 
 
