@@ -163,14 +163,17 @@ section {
 #messages {
     list-style-type: square;
 }
-#projects a{
-display: inline-block;
-min-width:  250px;
+
+#projects a {
+    display: inline-block;
+    min-width: 250px;
 }
-#projects span{
+
+#projects span {
     font-style: italic;
     font-size: smaller;
 }
+
 #experience ul {
     list-style-type: none;
     display: flex;
@@ -191,11 +194,14 @@ min-width:  250px;
 }
 
 #message-form label {
-    font-size: 0.9em;
-    font-weight: 300;
-    color: var(--light-color);
     margin-bottom: 5px;
     display: block;
+}
+
+#message-form label, #message-form .info {
+    font-weight: 300;
+    color: var(--light-color);
+    font-size: 0.9em;
 }
 
 #message-form form {
@@ -272,4 +278,18 @@ min-width:  250px;
 footer {
     box-sizing: border-box;
     padding: 5px 50px;
+    position: relative;
+}
+
+#social-media {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 30px;
+    top: calc(50% - 10px);
+}
+
+#social-media img {
+    width: 20px;
+    height: 20px;
 }
