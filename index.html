@@ -87,16 +87,15 @@
             <h2>Leave a Message</h2>
             <form name="leave_message">
                 <div class="half">
-                    <label for="usersName">User Name</label><input type="text" name="usersName" id="usersName"
+                    <label for="usersName">User Name *</label><input type="text" name="usersName" id="usersName"
                         required="true">
                 </div>
-                <div class="half"><label for="usersEmail">User Email</label><input type="text" name="usersEmail" id="usersEmail"
+                <div class="half"><label for="usersEmail">User Email *</label><input type="text" name="usersEmail" id="usersEmail"
                         required="true"></div>
-                <div class="full"><label for="usersMessage">User Message</label>
+                <div class="full"><label for="usersMessage">User Message *</label>
                 <textarea name="usersMessage" id="usersMessage"
                         required="true"></textarea></div>
-                <div class="half
-                "><button type="submit">Submit</button></div>
+                <div class="half"><button type="submit">Submit</button></div><div class="full info">* - required fields</div>
             </form>
 
         </section>
@@ -104,7 +103,13 @@
             <h2>Messages</h2>
             <ul id="messages"></ul>
         </section>
-        <footer></footer>
+        <footer>
+            <div id="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100004603443077"><img src="images/iconFacebook.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com/ann_shere/"><img src="images/iconInsta.svg" alt="instagram"></a> 
+                <a href="https://twitter.com/AnnaLukyan"><img src="images/iconTwitter.svg" alt="twitter"></a>
+            </div>
+        </footer>
         <script src="js/index.js"></script>
     </div>
 </body>
