@@ -289,6 +289,12 @@ footer {
     top: calc(50% - 10px);
 }
 
+@media screen and (max-width: 1024px) {
+    #social-media {
+        right: 70px
+    }
+}
+
 #social-media img {
     width: 20px;
     height: 20px;
